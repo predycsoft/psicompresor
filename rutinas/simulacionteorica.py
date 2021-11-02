@@ -1,6 +1,5 @@
-from proter import *
+from rutinas.proter import *
 from sympy import *
-from constantes import GC
 from prettytable import PrettyTable
 import numpy as np
 """
@@ -108,7 +107,7 @@ Esta rutina retorna los valores de:
 """
 
 def punto(z, TSUC, PSUC, FLUJO, DIAM, NRPM, CC1, CC2, CC3, CC4, EXPOCP, CE1, CE2, CE3, CE4,EXPOEP, GC, SURGE, STONEW, DEQ_DIM, T_DIM, P_DIM, FLUJO_DIM):
-    ## Cambios de dimensiones
+    # Cambios de dimensiones
     #DIAMETRO
     if (DEQ_DIM == '[pulg]'):
         DIAM = DIAM
@@ -252,33 +251,33 @@ def polinomio(CAUDAL, ymw, vg, NRPM, C1, C2, C3, C4, EXP):
     value = C1 + C2*QN + C3*QN**2 + C4*QN**EXP
     return value, QN
 
-def simulacion(gases, tsuc, psuc, FLUJO, diametros, NSEC, surge, stonew, expocp, cc1,cc2,cc3,cc4,expoep,ce1,ce2,ce3,ce4,divflj,relvel,nimpuls, NRPM):
-    for i in range(NSEC):
-        # Datos del fabricante
-        DIAM = diametros[i]
-        SURGE = surge[i]
-        STONEW = stonew[i]
-        EXPOCP = expocp[i]
-        CC1 = cc1[i]
-        CC2 = cc2[i]
-        CC3 = cc3[i]
-        CC4 = cc4[i]
-        EXPOEP = expoep[i]
-        CE1 = ce1[i]
-        CE2 = ce2[i]
-        CE3 = ce3[i]
-        CE4 = ce4[i]
-        # Datos del proceso
-        print(gases.shape[1])
-        z = transpose(gases.row(i))
-        #z = Matrix((0.480000,0.066000,0.040100,0.005000,0.018000,0.005000,0.006500,0.007400,0.000000,0.000000,0.000000,0.000000,0.330000,0.021000,0.021000))
-        TSUC = tsuc[i]
-        PSUC = psuc[i]
-        ### Revisar extrac de gas combustible
-        DIVFLJ = divflj[i]
-        RELVEL = relvel[i]
-        NIMPULS = nimpuls[i]
-        punto(z, TSUC, PSUC, FLUJO, DIAM, NRPM, CC1, CC2, CC3, CC4, EXPOCP, CE1, CE2, CE3, CE4,EXPOEP, GC, SURGE, STONEW)
+# def simulacion(gases, tsuc, psuc, FLUJO, diametros, NSEC, surge, stonew, expocp, cc1,cc2,cc3,cc4,expoep,ce1,ce2,ce3,ce4,divflj,relvel,nimpuls, NRPM):
+#     for i in range(NSEC):
+#         # Datos del fabricante
+#         DIAM = diametros[i]
+#         SURGE = surge[i]
+#         STONEW = stonew[i]
+#         EXPOCP = expocp[i]
+#         CC1 = cc1[i]
+#         CC2 = cc2[i]
+#         CC3 = cc3[i]
+#         CC4 = cc4[i]
+#         EXPOEP = expoep[i]
+#         CE1 = ce1[i]
+#         CE2 = ce2[i]
+#         CE3 = ce3[i]
+#         CE4 = ce4[i]
+#         # Datos del proceso
+#         print(gases.shape[1])
+#         z = transpose(gases.row(i))
+#         #z = Matrix((0.480000,0.066000,0.040100,0.005000,0.018000,0.005000,0.006500,0.007400,0.000000,0.000000,0.000000,0.000000,0.330000,0.021000,0.021000))
+#         TSUC = tsuc[i]
+#         PSUC = psuc[i]
+#         ### Revisar extrac de gas combustible
+#         DIVFLJ = divflj[i]
+#         RELVEL = relvel[i]
+#         NIMPULS = nimpuls[i]
+#         punto(z, TSUC, PSUC, FLUJO, DIAM, NRPM, CC1, CC2, CC3, CC4, EXPOCP, CE1, CE2, CE3, CE4,EXPOEP, GC, SURGE, STONEW)
     return
 
 

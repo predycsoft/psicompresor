@@ -3,7 +3,7 @@ import math
 from decimal import *
 
 from sympy.matrices.expressions.transpose import transpose
-from constantes import CMW, TC, cd, B, CKIJ, acf, PC, CI
+from rutinas.constantes import CMW, TC, cd, B, CKIJ, acf, PC, CI
 import time
 
 flag = 0

@@ -1,5 +1,4 @@
-from proter import *
-from entradas_adim import *
+from rutinas.proter import *
 from prettytable import PrettyTable
 import math
 
@@ -72,12 +71,7 @@ Esta rutina retorna los valores de:
     'Factor de Compresión de Isentrópica': fact_comp_isen
     'Peso Molecular': ymw
 """
-DEQ_DIM = '[pulg]'
-TSUC_DIM = '[°F]'
-TDES_DIM = '[°F]'
-PSUC_DIM = '[psia]'
-PDES_DIM = '[psia]'
-FLUJO_DIM = '[MMSCFD]'
+
 def ADIM(z, DEQ, TSUC, PSUC, TDES, PDES, qw, NREV, NIMPULS, DEQ_DIM, TSUC_DIM, TDES_DIM, PSUC_DIM, PDES_DIM, FLUJO_DIM):
     V = 1
     ############################################
@@ -243,7 +237,3 @@ def ADIM(z, DEQ, TSUC, PSUC, TDES, PDES, qw, NREV, NIMPULS, DEQ_DIM, TSUC_DIM, T
     table.add_row(['Peso Molecular', ymw])
     #print(table)
     return Np, si, mi, wp, gashp, qw, relacion_de_compresion, relacion_de_volumen, t3i, p3i,dens_suc, dens_des, dens_isen, vm1s, vm2d, vg3i, hm1s, hm2d, hm3i, sg1s, sg2d, sg3i, zcomp, zsal, fact_comp_isen, ymw, qn
-
-
-if  __name__ == "__main__":
-    ADIM(z, DEQ, TSUC, PSUC, TDES, PDES, qw, NREV)
