@@ -186,6 +186,7 @@ def punto(z, TSUC, PSUC, FLUJO, DIAM, NRPM, CC1, CC2, CC3, CC4, EXPOCP, CE1, CE2
             else:
                 XTAN2 = n
                 YTAN2 = delta
+            print("...convergiendo entalpia teorica", delta)
             if abs(delta) <= 0.006:
                 break
     PDES = presion(P1, CFHEAD, n, DIAM, NRPM, vg, GC)

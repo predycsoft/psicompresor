@@ -29,7 +29,7 @@ def pruebaEficiencia():
     salidaCampo = simulacionCampo()
     pdescampo = salidaCampo[15,1:]
     NSEC = pdescampo.shape[0]
-    print(NSEC)
+    # print(NSEC)
     salida =np.array(["tipo", "ID", "PSUC", "PDES", "TSUC", "TDES", "Densidad", "Entalpia", "SURGE", "QN", "STONEW", "CFHEAD", "HEAD", "EFIC", "HP", "POLLY", "Q", "RPM"])
     salida = np.c_[salida]
     from entradateorica import entradas
